@@ -10,6 +10,9 @@ export class WelcomeComponent implements OnInit {
 
   utente: string = "";
 
+  titolo: string = "Benvenuto in Lezione Angular";
+  sottotitolo: string = "Procedi ad inserire la userid e la password";
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

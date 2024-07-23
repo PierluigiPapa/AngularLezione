@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
 
   errorMsg: string = "Spiacente, il nome utente e/o la password sono errati";
 
+  titolo: string = "Accedi e autenticati!";
+  sottotitolo: string = "Procedi ad inserire la userid e la password";
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
