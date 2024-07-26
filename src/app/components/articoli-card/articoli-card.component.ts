@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IArticoli } from 'src/app/models/articoli';
+
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ArticoliCardComponent implements OnInit {
   constructor() { }
 
   @Input()
-  articolo: IArticoli = {
+  articolo: IArticoli  = {
     codart: '',
     descrizione: '',
     um: '',
@@ -20,11 +21,19 @@ export class ArticoliCardComponent implements OnInit {
     peso: 0,
     prezzo: 0,
     active: true,
-    data: new Date (),
+    data: new Date(),
     imageUrl: ''
   };
 
+  @Output()
+  delete = new EventEmitter();
+  @Output()
+  edit = new EventEmitter();
+
   ngOnInit(): void {
   }
+
+  editArt = () =>  this.edit.emit(this.articolo.codart);
+  delArt = () => this.delete.emit(this.articolo.codart);
 
 }

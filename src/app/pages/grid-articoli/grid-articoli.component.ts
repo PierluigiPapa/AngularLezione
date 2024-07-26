@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IArticoli } from 'src/app/models/articoli';
+
+
 import { ArticoliService } from 'src/services/articoli.service';
 
 @Component({
@@ -17,6 +19,21 @@ export class GridArticoliComponent implements OnInit {
 
     this.articoli$ = this.articoliService.getArticoli();
     console.log(this.articoli$);
+
+  }
+
+  handleEdit = (codart : string) => {
+    console.log("Cliccato tasto modifica del codice " + codart);
+
+
+  }
+
+  handleDelete = (codart : string) => {
+    console.log("Cliccato tasto elimina del codice " + codart);
+
+    this.articoli$.splice(this.articoli$.findIndex(x => x.codart === codart), 1);
+    console.log(this.articoli$);
+
   }
 
 }
