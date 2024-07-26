@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticoli } from 'src/app/models/articoli';
+import { ArticoliService } from 'src/services/articoli.service';
 
 @Component({
   selector: 'app-grid-articoli',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridArticoliComponent implements OnInit {
 
-  constructor() { }
+  articoli$ : IArticoli[] = [];
+
+  constructor(private articoliService: ArticoliService) { }
 
   ngOnInit(): void {
+
+    this.articoli$ = this.articoliService.getArticoli();
+    console.log(this.articoli$);
   }
 
 }
