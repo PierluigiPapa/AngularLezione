@@ -6,12 +6,14 @@ import { ErrorComponent } from './pages/error/error.component';
 import { ArticoliComponent } from './pages/articoli/articoli.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { RouteGuardService } from 'src/services/route-guard-service.service';
+import { GridArticoliComponent } from './pages/grid-articoli/grid-articoli.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'welcome/:userID', component: WelcomeComponent, canActivate: [RouteGuardService]},
   {path: 'articoli', component: ArticoliComponent, canActivate: [RouteGuardService]},
+  {path: 'articoli/grid', component: GridArticoliComponent, canActivate: [RouteGuardService]},
   {path: 'logout', component: LogoutComponent},
   {path: '**', component: ErrorComponent},
 ];

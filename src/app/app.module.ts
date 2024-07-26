@@ -10,6 +10,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { ArticoliComponent } from './pages/articoli/articoli.component';
 import { CoreModule } from './core/core.module';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { GridArticoliComponent } from './pages/grid-articoli/grid-articoli.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LogoutComponent } from './pages/logout/logout.component';
     ErrorComponent,
     ArticoliComponent,
     LogoutComponent,
+    GridArticoliComponent,
   ],
   imports: [
     BrowserModule,
